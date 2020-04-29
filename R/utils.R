@@ -38,7 +38,7 @@ im_load_cimg = function( path ){
     return( im )
   } else if( imager::spectrum( im ) < 3 ){
     return( imager::R( im ) )
-  } else if( imager::spectrum( im ) < 3 ){
+  } else if( imager::spectrum( im ) > 3 ){
     return( imager::imappend(
       list( imager::R( im ), imager::G( im ), imager::B( im ) ), axis = "c" ) )
   }
@@ -608,7 +608,7 @@ sketch = function( im, style = 1, lineweight = 1, smoothing = 1, contrast = ifel
 
   im2 = clamping( im / temp )
 
-  return( im2^contrast )
+  return( base::invisible( im2^contrast ) )
 }
 
 
@@ -648,7 +648,7 @@ canny = function( im, t1, t2, alpha = 1, sigma = 2, smoothing = 0 ){
   im2 = imager::cannyEdges( array2cimg( im ), t1, t2, alpha = 1, sigma = 2 )
   im2 = cimg2array( 1 - im2 )
 
-  return( im2 )
+  return( base::invisible( im2 ) )
 }
 
 
@@ -711,7 +711,7 @@ survey = function( im, style = 1,
     cat( "done.\n" )
   }
 
-  return( imgs )
+  return( base::invisible( imgs ) )
 }
 
 
