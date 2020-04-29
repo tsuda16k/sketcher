@@ -595,7 +595,7 @@ pplot = function( im, rescale = FALSE ){
 #' pplot(im)
 #' }
 sketch = function( im, style = 1, lineweight = 1, smoothing = 1,
-                   contrast = ifelse( style == 1, 8, 3 ), gain = 0.1 ){
+                   contrast = ifelse( style == 1, 16, 4 ), gain = 0.1 ){
   im = im_gray( im )
   im = raise_bottom( im, gain )
   N = floor( log2( min( im_size( im ) ) ) )
