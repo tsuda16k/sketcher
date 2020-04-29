@@ -94,7 +94,7 @@ style:
 | im         | An input image                                    |         |
 | style      | Either 1 (edge-focused) or 2 (shading preserving) | 1       |
 | lineweight | Strength of lines                                 | 1       |
-| smoothning | Smoothness of image texture/gradient              | 1       |
+| smoothing  | Smoothness of image texture/gradient              | 1       |
 | contrast   | Adjusts the image contrast                        | 7       |
 
 The default is `sketch(im, style = 1, lineweight = 1, smoothing = 1,
