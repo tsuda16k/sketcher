@@ -9,6 +9,7 @@ Description: An implementation of image processing effects that convert a photo 
     For details, please refer to Tsuda, H. (2020). sketcher: An R package for converting a photo into a sketch style image. 
     <doi:10.31234/osf.io/svmw5>.
 URL: https://htsuda.net/sketcher/
+BugReports: https://github.com/tsuda16k/sketcher/issues/
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
