@@ -35,11 +35,13 @@ Mac OS X users need to install XQuartz (https://www.xquartz.org/).
 
 ## Installation
 
-To install the CRAN release version of ```sketcher```:
+Please use ```devtools``` package to install ```sketcher``` package.
 
 ``` r
-install.packages("sketcher")
+devtools::install_github("tsuda16k/sketcher")
 ```
+
+(The ```sketcher``` package is currently under review by CRAN, so install.packages("sketcher") command does not work.)
 
 Then, attach the package.
 
@@ -104,7 +106,7 @@ While "style 1" focuses on edges and mostly removes shading, "style 2" tends to 
 
 ### The effects of lineweight and smoothness
 
-See the introduction vignette for details.
+See the [this page](https://htsuda.net/sketcher/) for details.
 
 ## Saving the image
 
@@ -118,3 +120,7 @@ im_save(im2, name = "myimage" path = "set/your/path", format = "jpg", quality = 
 ```
 
 When using ```format = "jpg"```, you can set the quality of jpg compression (default = 0.95).
+
+## Misc
+
+See the [this page](https://htsuda.net/sketcher/) for additional information.
