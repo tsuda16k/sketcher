@@ -92,18 +92,20 @@ pplot(im2)
 The ```sketch()``` function has some arguments to control the drawing style:
 
 ```{r echo = F, results = 'asis'}
-Argument = c("im", "style", "lineweight", "smoothing", "contrast")
+Argument = c("im", "style", "lineweight", "smoothing", "contrast", "gain")
 Meaning = c( "An input image", "Either 1 (edge-focused) or 2 (shading preserving)", "Strength of lines",
-             "Smoothness of image texture/gradient", "Adjusts the image contrast" )
-Default = c( "", "1", "1", "1", "7" )
+             "Smoothness of image texture/gradient", "Adjusts the image contrast", "Can be used to reduce noise in dim regions" )
+Default = c( "", "1", "1", "1", "8 (for style1) or 3 (for style2)", "0.1" )
 doc_sketch = data.frame( Argument, Meaning, Default, stringsAsFactors = F )
 library(knitr)
 kable(doc_sketch)
 ```
 
-The default is ```sketch(im, style = 1, lineweight = 1, smoothing = 1, contrast = 7)```.
+The default is ```sketch(im, style = 1, lineweight = 1, smoothing = 1, contrast = 8, gain = 0.1)```.
 
 While "style 1" focuses on edges and mostly removes shading, "style 2" tends to retain shading and has smooth luminance gradient transitions.
+
+When the output sketch has low contrast (pale/whitish), then increase the contrast value.
 
 ### The effects of lineweight and smoothness
 
