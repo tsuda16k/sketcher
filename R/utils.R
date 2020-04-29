@@ -553,7 +553,7 @@ get_residual = function( im, Depth, log_epsilon = 0.0001, filter_epsilon = 0.01 
 #' pplot(face)
 pplot = function( im, rescale = FALSE ){
   old.par = graphics::par(no.readonly = TRUE )
-  on.exit( graphics::par( old.par ) )
+  on.exit( graphics::par( old.par ), add = TRUE )
 
   if( ! imager::is.cimg( im ) ){
     im = array2cimg( im )
