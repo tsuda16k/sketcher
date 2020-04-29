@@ -56,9 +56,11 @@ The ```sketcher``` package has a built-in image, which is useful when you want t
 
 To plot an image, use ```pplot()``` function. (Not ```plot```, but ```pplot```.)
 
-```{r}
+```{r, eval=FALSE, echo=TRUE}
 pplot(face)
 ```
+
+![](vignettes/face.jpg)
 
 ## Load an image
 
@@ -82,10 +84,12 @@ im = face
 
 Use the ```sketch()``` function to apply the sketch effect.
 
-```{r}
+```{r, eval=FALSE, echo=TRUE}
 im2 = sketch(im) # may take some seconds
 pplot(im2)
 ```
+
+![](vignettes/sketch.png)
 
 ### Arguments of the sketch() function
 

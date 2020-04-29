@@ -51,7 +51,7 @@ To plot an image, use `pplot()` function. (Not `plot`, but `pplot`.)
 pplot(face)
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+![](vignettes/face.jpg)
 
 ## Load an image
 
@@ -82,7 +82,7 @@ im2 = sketch(im) # may take some seconds
 pplot(im2)
 ```
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+![](vignettes/sketch.png)
 
 ### Arguments of the sketch() function
 
