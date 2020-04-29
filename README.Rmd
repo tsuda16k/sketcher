@@ -92,7 +92,7 @@ pplot(im2)
 The ```sketch()``` function has some arguments to control the drawing style:
 
 ```{r echo = F, results = 'asis'}
-Argument = c("im", "style", "lineweight", "smoothning", "contrast")
+Argument = c("im", "style", "lineweight", "smoothing", "contrast")
 Meaning = c( "An input image", "Either 1 (edge-focused) or 2 (shading preserving)", "Strength of lines",
              "Smoothness of image texture/gradient", "Adjusts the image contrast" )
 Default = c( "", "1", "1", "1", "7" )
