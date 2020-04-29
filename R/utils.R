@@ -84,11 +84,11 @@ im_load = function( path ){
 #' @return No return value, called for side effects.
 #' @examples
 #' \dontrun{
-#' imsave( face )
+#' imsave( face, path = getwd() )
 #' imsave( face, name = "myimage", path = "path/to/image", format = "jpg" )
 #' }
 #' @export
-im_save = function( im, name, path = getwd(), format = "png", quality = .95 ){
+im_save = function( im, name, path, format = "png", quality = .95 ){
   if( !format %in% c( "jpg", "png", "tiff", "bmp" ) ){
     warning( "Incorrect imaeg format. imsave supports jpg, png, tiff, and bmp." )
     return()
