@@ -8,6 +8,13 @@ clamping = function( x, min = 0, max = 1 ){
 
 
 
+raise_bottom = function( x, intercept ){
+  y = intercept + ( 1 - intercept ) * x
+  return( y )
+}
+
+
+
 cimg2array = function( im ){
   # (x, y, z, cc) to (y, x, cc, z)
   return( base::aperm( im, c( 2, 1, 4, 3 ) ) )
@@ -576,6 +583,7 @@ pplot = function( im, rescale = FALSE ){
 #' @param lineweight numeric (integer). Strength of lines.
 #' @param smoothing numeric (integer). Smoothness of image texture.
 #' @param contrast numeric (integer). Adjusts the image contrast.
+#' @param gain numeric (double). Can be used to reduce noise in dim regions.
 #' @return an array of the sketched image.
 #' @export
 #' @examples
@@ -586,8 +594,10 @@ pplot = function( im, rescale = FALSE ){
 #' im = im_load("path/to/your/image.jpg")
 #' pplot(im)
 #' }
-sketch = function( im, style = 1, lineweight = 1, smoothing = 1, contrast = ifelse( style == 1, 8, 3 ) ){
+sketch = function( im, style = 1, lineweight = 1, smoothing = 1,
+                   contrast = ifelse( style == 1, 8, 3 ), gain = 0.1 ){
   im = im_gray( im )
+  im = raise_bottom( im, gain )
   N = floor( log2( min( im_size( im ) ) ) )
   if( smoothing > N ){
     warning( paste0( "smoothing exceeded the maximum possible value for the input image. smoothing = ",

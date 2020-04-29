@@ -9,7 +9,8 @@ sketch(
   style = 1,
   lineweight = 1,
   smoothing = 1,
-  contrast = ifelse(style == 1, 8, 3)
+  contrast = ifelse(style == 1, 8, 3),
+  gain = 0.1
 )
 }
 \arguments{
@@ -22,6 +23,8 @@ sketch(
 \item{smoothing}{numeric (integer). Smoothness of image texture.}
 
 \item{contrast}{numeric (integer). Adjusts the image contrast.}
+
+\item{gain}{numeric (double). Can be used to reduce noise in dim regions.}
 }
 \value{
 an array of the sketched image.
