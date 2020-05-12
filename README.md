@@ -74,7 +74,7 @@ To plot an image, use the `plot()` function.
 plot(face)
 ```
 
-<img src="notes/face.png" width="280">
+<img src="notes/face.png" width="40%">
 
 (In examples below, I actually used
 <a href="notes/sketcher_face.jpg">this image</a>, which has higher
@@ -258,6 +258,25 @@ reasonable result (described later).
 </p>
 
 ## Tips for successful sketching
+
+For some images, good results may be obtained with the default
+parameters. However, in many cases, the default sketch produces an
+unsatisfactory result.
+
+Here I show some typical cases where the default sketch fails, and how
+to fix it.
+
+#### Case 1
+
+The default sketch is missing in outline, and texture is lacking. In
+such
+cases,
+
+<p>
+
+<a href="https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/bird_900.jpg"><img src="notes/bird_900.jpg" width="100%"></a>
+
+</p>
 
 ## Misc
 
