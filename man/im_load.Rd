@@ -2,22 +2,27 @@
 % Please edit documentation in R/utils.R
 \name{im_load}
 \alias{im_load}
-\title{Load image from file}
+\title{Load image from file or URL}
 \usage{
-im_load(path)
+im_load(file, name)
 }
 \arguments{
-\item{path}{path to an image file}
+\item{file}{path to file or URL}
+
+\item{name}{a string for name attribute. if missing, inferred from the file argument.}
 }
 \value{
-an array representing the image
+an array of image data
 }
 \description{
-The png, jpg, and bmp are supported.
+Load image from file or URL
 }
 \examples{
 \dontrun{
+# load an image from disk
 im = im_load("path/to/your/image.jpg")
 pplot(im)
+# load an image from URL
+im = im_load("http://placehold.jp/150x150.png")
 }
 }

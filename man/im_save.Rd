@@ -4,7 +4,7 @@
 \alias{im_save}
 \title{Save an image to disk}
 \usage{
-im_save(im, name, path = getwd(), format = "png", quality = 0.95)
+im_save(im, name, path, format = "png", quality = 0.95)
 }
 \arguments{
 \item{im}{An image.}
@@ -24,8 +24,11 @@ No return value, called for side effects.
 Save an image to disk
 }
 \examples{
-\dontrun{
-imsave( face )
-imsave( face, name = "myimage", path = "path/to/image", format = "jpg" )
-}
+im = sketch(face)
+
+# im.png is saved to the current working directory
+im_save( im, path = getwd() )
+
+# myimage.jpg is saved to a specified directory
+im_save( im, name = "myimage", path = "path/to/image", format = "jpg" )
 }

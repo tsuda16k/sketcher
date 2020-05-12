@@ -2,39 +2,45 @@
 % Please edit documentation in R/utils.R
 \name{sketch}
 \alias{sketch}
-\title{Apply a sketch effect on an image}
+\title{Apply the sketch effect on an image}
 \usage{
 sketch(
   im,
   style = 1,
   lineweight = 1,
-  smoothing = 1,
-  contrast = ifelse(style == 1, 8, 3),
-  gain = 0.1
+  smooth = lineweight,
+  gain = 0.02,
+  contrast = NULL,
+  shadow = 0,
+  max.size = 2048
 )
 }
 \arguments{
 \item{im}{an image (array).}
 
-\item{style}{numeric (integer). Either 1 (edge-focused) or 2 (shading preserving)}
+\item{style}{a numeric (integer). Either 1 or 2.}
 
-\item{lineweight}{numeric (integer). Strength of lines.}
+\item{lineweight}{a numeric. Strength of lines.}
 
-\item{smoothing}{numeric (integer). Smoothness of image texture.}
+\item{smooth}{a numeric (integer). Smoothness of image texture.}
 
-\item{contrast}{numeric (integer). Adjusts the image contrast.}
+\item{gain}{a numeric between 0 and 1. Can be used to reduce noise in dim regions.}
 
-\item{gain}{numeric (double). Can be used to reduce noise in dim regions.}
+\item{contrast}{a numeric (integer). Adjusts the image contrast.}
+
+\item{shadow}{a numeric between 0 and 1}
+
+\item{max.size}{maximum image resolution (width or height) of the output image}
 }
 \value{
-an array of the sketched image.
+an image.
 }
 \description{
-Apply a sketch effect on an image
+Apply the sketch effect on an image
 }
 \examples{
-im = sketch(face, style = 1, lineweight = 1, smoothing = 1)
-pplot(im)
+im = sketch(face)
+plot(im)
 
 \dontrun{
 im = im_load("path/to/your/image.jpg")
