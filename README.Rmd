@@ -89,7 +89,7 @@ The jpg, png, and bmp formats are supported.
 You can load an image from the web (URL). For example, 
 
 ```{r, eval=FALSE, echo=TRUE}
-im = im_load("https://github.com/tsuda16k/sketcher/notes/sketcher_face.jpg")
+im = im_load("https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/sketcher_face.jpg")
 ```
 
 will load a high resolution version of the face image noted above (compare ```dim(face)``` and ```dim(im)```).
@@ -181,7 +181,7 @@ The ```smooth``` parameter controls the degree of smoothness of image texture. B
 
 In most cases, aesthetically pleasing results will be obtained when ```smooth``` value is equal to or larger than ```lineweight```. If ```smooth``` is not given in the ```sketch()``` function, ```smooth``` is assigned with the same value as ```lineweight```.
 
-<p><a href="notes/line_smooth_2100.jpg"><img src="notes/line_smooth_900.jpg" width="100%"></a></p>
+<p><a href="https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/line_smooth_2100.jpg"><img src="notes/line_smooth_900.jpg" width="100%"></a></p>
 
 ### - gain
 

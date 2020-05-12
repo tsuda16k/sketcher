@@ -98,7 +98,7 @@ You can load an image from the web (URL). For
 example,
 
 ``` r
-im = im_load("https://github.com/tsuda16k/sketcher/notes/sketcher_face.jpg")
+im = im_load("https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/sketcher_face.jpg")
 ```
 
 will load a high resolution version of the face image noted above
@@ -143,7 +143,7 @@ function:
 | lineweight | Strength of lines        | a numeric, \>= 0.3     | 1                                 |
 | smooth     | Smoothness of texture    | an integer, \>= 0      | 1                                 |
 | gain       | Gain parameter           | a numeric betw 0 and 1 | 0.02                              |
-| contrast   | Contrast parameter       | a numeric, \>= 0       | 18 (for style1) or 4 (for style2) |
+| contrast   | Contrast parameter       | a numeric, \>= 0       | 20 (for style1) or 4 (for style2) |
 | shadow     | Shadow threshold         | a numeric betw 0 and 1 | 0.0                               |
 | max.size   | Max resolution of output | an integer, \> 0       | 2048                              |
 
@@ -178,7 +178,7 @@ Use the `im_save()` function to save an image.
 
 ``` r
 im = face
-im2 = sketch(im, style = 1, lineweight = 1)
+im2 = sketch(im, style = 1, lineweight = 1, shadow = 0.3)
 
 # myimage.png is saved in the current working directory
 im_save(im2, name = "myimage", path = getwd())
@@ -222,7 +222,7 @@ value as
 
 <p>
 
-<a href="notes/line_smooth_2100.jpg"><img src="notes/line_smooth_900.jpg" width="100%"></a>
+<a href="https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/line_smooth_2100.jpg"><img src="notes/line_smooth_900.jpg" width="100%"></a>
 
 </p>
 
@@ -236,7 +236,7 @@ parameter.
 ### \- contrast
 
 By increasing the `contrast` parameter, a sketch is darkened. When a
-sketch appears whitish, increase the `contrast` value.
+sketch appears whitish, you may need to increase the `contrast` value.
 
 <p>
 
@@ -249,7 +249,7 @@ sketch appears whitish, increase the `contrast` value.
 Shadow can be added to a sketch by using the `shadow` parameter.  
 By default, the sketch function does not include shadow (shadow = 0). In
 many cases, however, adding shadow will be needed to produce a
-reasonable results (described later).
+reasonable result (described later).
 
 <p>
 
