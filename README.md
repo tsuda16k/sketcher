@@ -268,13 +268,17 @@ to fix it.
 
 #### Case 1
 
-The default sketch is missing in outline, and texture is lacking. In
-such
-cases,
+In the default sketch, outline is missing and texture is lacking.
+
+By using style 2 and adding shadow, `sketch(im, style = 2, shadow
+= 0.4)`, the problems are largely solved. In addition, zero smoothing,
+`sketch(im, style = 2, lineweight = 1, smooth = 0, shadow = 0.4)`, also
+provided fine
+texture.
 
 <p>
 
-<a href="https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/bird_900.jpg"><img src="notes/bird_900.jpg" width="100%"></a>
+<a href="https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/bird_1800.jpg"><img src="notes/bird_900.jpg" width="100%"></a>
 
 </p>
 
