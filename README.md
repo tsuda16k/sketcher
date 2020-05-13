@@ -157,7 +157,7 @@ lineweight, gain = .02, contrast = NULL, shadow = 0, max.size = 2048)`.
     larger than 0.3.
   - smooth: noise/blob smoother. set an integer value equal to or larger
     than 0.
-  - gain: this parameter may be usuful for noise reduction.
+  - gain: this parameter may be useful for noise reduction.
   - contrast: contrast of the sketch image is adjusted by this
     parameter.
   - shadow: if given a value larger than 0 (e.g., 0.3), shadows are
@@ -229,9 +229,10 @@ value as
 ### \- gain
 
 A constant value (gain) is added to an input image before the extraction
-of edges to produce a sketch. Although this is useful in some cases
-(described later), in most cases you don’t have to care about this
-parameter.
+of edges to produce a sketch. A sketch can be very noisy when an input
+image has dark/dim regions. In such cases, increasing the gain, such as
+`gain = 0.2` or `gain = 0.3`, may reduce the noise. In most cases,
+however, you don’t have to care about this parameter.
 
 ### \- contrast
 
@@ -260,21 +261,19 @@ reasonable result (described later).
 ## Tips for successful sketching
 
 For some images, good results may be obtained with the default
-parameters. However, in many cases, the default sketch produces an
-unsatisfactory result.
+parameters of the sketch function. However, in many cases, the default
+sketch will produce an unsatisfactory result. Here I show some cases
+where the default sketch fails, and how to fix it.
 
-Here I show some typical cases where the default sketch fails, and how
-to fix it.
+### Case 1
 
-#### Case 1
-
-In the default sketch, outline is missing and texture is lacking.
-
-By using style 2 and adding shadow, `sketch(im, style = 2, shadow
-= 0.4)`, the problems are largely solved. In addition, zero smoothing,
-`sketch(im, style = 2, lineweight = 1, smooth = 0, shadow = 0.4)`, also
-provided fine
-texture.
+Outline is missing and texture is lacking in the default sketch. By
+using style 2 and adding shadow, `sketch(im, style = 2, shadow = 0.4)`,
+the problems are largely solved. In addition, by setting the `smooth`
+parameter to 0, `sketch(im, style = 2, lineweight = 1, smooth = 0,
+shadow = 0.4)`, the sketch was successful in representing the fine
+texture of bird
+body.
 
 <p>
 
@@ -282,7 +281,64 @@ texture.
 
 </p>
 
-## Misc
+### Case 2
 
-See the [this page](https://htsuda.net/sketcher/) for additional
-information.
+Due to the lack of edges in the dark region of the face, the default
+sketch, `sketch(im)`, produced a weird result. This can be fixed by
+adding shadow, such as `sketch(im, shadow = 0.4)`. Finding the right
+value of the shadow parameter usually requires trial and error, but
+usually 0.3 or 0.4 will produce a reasonable result.
+
+<p>
+
+<img src="notes/face3_900.jpg" width="80%">
+
+</p>
+
+### Case 3
+
+The sketch algorithm detects edges in an image. If objects have unclear
+edges/outlines, sketching will fail. This typically happens when a photo
+contains 1) out of focus region or 2) objects with unclear outlines such
+as furry animals.
+
+A cat image below is such an example. The background of the photo and
+the lower body of the cat is out of focus, and the outline of the cat is
+blurry. The default sketch, `sketch(im)`, is unsuccessful in
+representing the cat. Zero smoothing, `sketch(im, smooth = 0)`, can
+capture hairs/textures of the cat to some extent, at the cost of
+increased noise in background, and still the body and legs of the cat is
+not represented well. There is no simple solution to the difficulty with
+blurred/defocused images.
+
+<p>
+
+<img src="notes/cat_900.jpg" width="100%">
+
+</p>
+
+## Gallery
+
+<p>
+
+<img src="notes/gallery_cake_900.jpg" width="100%">
+
+</p>
+
+<p>
+
+<img src="notes/gallery_container_900.jpg" width="100%">
+
+</p>
+
+<p>
+
+<img src="notes/gallery_soba_900.jpg" width="100%">
+
+</p>
+
+<p>
+
+<img src="notes/gallery_tokyo_st_900.jpg" width="100%">
+
+</p>

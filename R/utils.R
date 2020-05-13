@@ -1004,6 +1004,7 @@ gf_reconstruct = function( dec, scales, ind, include.residual = TRUE ){
 #' @export
 sketch = function( im, style = 1, lineweight = 1, smooth = lineweight, gain = .02, contrast = NULL,
                    shadow = 0, max.size = 2048 ){
+  smooth = round( max( smooth, 1 ) )
   if( is.null( contrast ) ){
     contrast = ifelse( style == 1, 20, 4 )
   }
