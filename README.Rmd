@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 
 By using the ```sketcher``` package, you can convert a photo into a line drawing image.  
 Drawing style (lineweight and inclusion/exclusion of shadow/shading) can be controlled.  
-Some example results are shown below.
+Some examples (source photos and generated sketches) are shown below.
 
 <p><img src="notes/face_demo_900.jpg" width="100%"></p>
 
@@ -225,6 +225,8 @@ A cat image below is such an example. The background of the photo and the lower 
 <p><img src="notes/cat_900.jpg" width="100%"></p>
 
 ## Gallery
+
+Here are some sketches produced by the sketcher package.
 
 <p><img src="notes/gallery_cake_900.jpg" width="100%"></p>
 <p><img src="notes/gallery_container_900.jpg" width="100%"></p>

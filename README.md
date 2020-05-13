@@ -11,7 +11,7 @@ By using the `sketcher` package, you can convert a photo into a line
 drawing image.  
 Drawing style (lineweight and inclusion/exclusion of shadow/shading) can
 be controlled.  
-Some example results are shown below.
+Some examples (source photos and generated sketches) are shown below.
 
 <p>
 
@@ -318,6 +318,8 @@ blurred/defocused images.
 </p>
 
 ## Gallery
+
+Here are some sketches produced by the sketcher package.
 
 <p>
 
