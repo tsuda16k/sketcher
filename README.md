@@ -148,7 +148,8 @@ function:
 | max.size   | Max resolution of output | an integer, \> 0       | 2048                              |
 
 The default is `sketch(im, style = 1, lineweight = 1, smooth =
-lineweight, gain = .02, contrast = NULL, shadow = 0, max.size = 2048)`.
+ceiling(lineweight), gain = .02, contrast = NULL, shadow = 0, max.size
+= 2048)`.
 
   - im: an image, obtained by using the `im_load()` function.
   - style: while style 1 focuses on edges, style 2 also retains shading.
@@ -217,8 +218,8 @@ blobs are eliminated (see the figure below).
 In most cases, aesthetically pleasing results will be obtained when
 `smooth` value is equal to or larger than `lineweight`. If `smooth` is
 not given in the `sketch()` function, `smooth` is assigned with the same
-value as
-`lineweight`.
+value as `lineweight` (actually, `smooth =
+ceiling(lineweight)`).
 
 <p>
 

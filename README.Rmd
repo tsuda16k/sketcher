@@ -133,8 +133,7 @@ library(knitr)
 kable(doc_sketch)
 ```
 
-The default is ```sketch(im, style = 1, lineweight = 1, smooth = lineweight, gain = .02, contrast = NULL,
-                   shadow = 0, max.size = 2048)```.
+The default is ```sketch(im, style = 1, lineweight = 1, smooth = ceiling(lineweight), gain = .02, contrast = NULL, shadow = 0, max.size = 2048)```.
 
 - im: an image, obtained by using the ```im_load()``` function.
 - style: while style 1 focuses on edges, style 2 also retains shading.
@@ -179,7 +178,7 @@ While style 1 is good at extracting fine edges, style 2 retains shading, as show
 
 The ```smooth``` parameter controls the degree of smoothness of image texture. By increasing the ```smooth``` value, fine-scale edges, noises, and blobs are eliminated (see the figure below). 
 
-In most cases, aesthetically pleasing results will be obtained when ```smooth``` value is equal to or larger than ```lineweight```. If ```smooth``` is not given in the ```sketch()``` function, ```smooth``` is assigned with the same value as ```lineweight```.
+In most cases, aesthetically pleasing results will be obtained when ```smooth``` value is equal to or larger than ```lineweight```. If ```smooth``` is not given in the ```sketch()``` function, ```smooth``` is assigned with the same value as ```lineweight``` (actually, ```smooth = ceiling(lineweight)```).
 
 <p><a href="https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/line_smooth_2100.jpg"><img src="notes/line_smooth_1500.jpg" width="100%"></a></p>
 

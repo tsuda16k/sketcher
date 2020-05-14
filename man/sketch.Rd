@@ -8,7 +8,7 @@ sketch(
   im,
   style = 1,
   lineweight = 1,
-  smooth = lineweight,
+  smooth = ceiling(lineweight),
   gain = 0.02,
   contrast = NULL,
   shadow = 0,
