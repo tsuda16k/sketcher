@@ -15,13 +15,13 @@ Some examples (source photos and generated sketches) are shown below.
 
 <p>
 
-<img src="notes/face_demo_900.jpg" width="100%">
+<img src="notes/face_demo_2000.jpg" width="100%">
 
 </p>
 
 <p>
 
-<img src="notes/others2_900.jpg" width="100%">
+<img src="notes/others2_2000.jpg" width="100%">
 
 </p>
 
@@ -78,8 +78,8 @@ plot(face)
 
 (In examples below, I actually used
 <a href="notes/sketcher_face.jpg">this image</a>, which has higher
-resolution than the provided by the package. Sketch results will be
-similar, but in general aesthetically more pleasing results can be
+resolution than the image provided by the package. Sketch results will
+be similar, but in general aesthetically more pleasing results can be
 obtained with images of higher resolution, at the cost of processing
 time.)
 
@@ -151,13 +151,13 @@ The default is `sketch(im, style = 1, lineweight = 1, smooth =
 lineweight, gain = .02, contrast = NULL, shadow = 0, max.size = 2048)`.
 
   - im: an image, obtained by using the `im_load()` function.
-  - style: while style 1 focuses on edges, style 2 tends to retain
-    shading.
+  - style: while style 1 focuses on edges, style 2 also retains shading.
   - lineweight: as the name suggests. set a numeric value equal to or
     larger than 0.3.
   - smooth: noise/blob smoother. set an integer value equal to or larger
     than 0.
-  - gain: this parameter may be useful for noise reduction.
+  - gain: this parameter may be useful for noise reduction in dim
+    region.
   - contrast: contrast of the sketch image is adjusted by this
     parameter.
   - shadow: if given a value larger than 0 (e.g., 0.3), shadows are
@@ -166,8 +166,8 @@ lineweight, gain = .02, contrast = NULL, shadow = 0, max.size = 2048)`.
     constrained by this parameter. if the input image has a very high
     resolution, such as 20000 x 10000 pixels, sketch processing will
     take a long time. In such cases, the algorithm first downscales the
-    image to 2048 x 1024 pixels, in this case, and then apply the sketch
-    effect.
+    input image to 2048 x 1024 pixels, in this case, and then apply the
+    sketch effect.
 
 The effects of these parameters on sketch appearances are described in
 detail below.
@@ -189,13 +189,13 @@ im_save(im2, name = "newimg", path = "set/your/path", format = "jpg", quality = 
 
 By default, an image is saved in the png format.  
 When using `format = "jpg"`, you can set the quality of jpg compression
-(default = 0.95).
+(default is 0.95).
 
 ## The effects of sketch parameters
 
 ### \- style and lineweight
 
-The most important parameters of the sketch function are `style` and
+The most important parameters of the `sketch()` function are `style` and
 `lineweight`.
 
 While style 1 is good at extracting fine edges, style 2 retains shading,
@@ -204,7 +204,7 @@ as shown in the figure. Note that the shading gets more salient when
 
 <p>
 
-<img src="notes/style_line_900.jpg" width="80%">
+<img src="notes/style_line_1200.jpg" width="80%">
 
 </p>
 
@@ -222,7 +222,7 @@ value as
 
 <p>
 
-<a href="https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/line_smooth_2100.jpg"><img src="notes/line_smooth_900.jpg" width="100%"></a>
+<a href="https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/line_smooth_2100.jpg"><img src="notes/line_smooth_1500.jpg" width="100%"></a>
 
 </p>
 
@@ -287,7 +287,7 @@ Due to the lack of edges in the dark region of the face, the default
 sketch, `sketch(im)`, produced a weird result. This can be fixed by
 adding shadow, such as `sketch(im, shadow = 0.4)`. Finding the right
 value of the shadow parameter usually requires trial and error, but
-usually 0.3 or 0.4 will produce a reasonable result.
+usually a value between 0.3 and 0.6 will produce a reasonable result.
 
 <p>
 
@@ -305,11 +305,11 @@ as furry animals.
 A cat image below is such an example. The background of the photo and
 the lower body of the cat is out of focus, and the outline of the cat is
 blurry. The default sketch, `sketch(im)`, is unsuccessful in
-representing the cat. Zero smoothing, `sketch(im, smooth = 0)`, can
+representing the cat body. Zero smoothing, `sketch(im, smooth = 0)`, can
 capture hairs/textures of the cat to some extent, at the cost of
 increased noise in background, and still the body and legs of the cat is
-not represented well. There is no simple solution to the difficulty with
-blurred/defocused images.
+not represented well. Unfortunately, there is no simple solution to the
+difficulty with blurred/defocused images.
 
 <p>
 
