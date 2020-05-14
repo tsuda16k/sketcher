@@ -15,11 +15,14 @@ So I removed any getwd() from default function parameters.
 - R-hub ubuntu-gcc-release (r-release)
 
 ## R CMD check results
-0 errors | 0 warnings | 1 notes
+0 errors | 0 warnings | 1 notes  
 1 note should be the first time submission note.
 
-Also, r-hub reports a note, saying "Possibly mis-spelled words in DESCRIPTION: Tsuda (9:34)."  
+Also, r-hub may report a note, saying "Possibly mis-spelled words in DESCRIPTION: Tsuda (9:34)."  
 But the spelling is OK.
+
+When I ran rhub::check_for_cran(), there was an error, saying "there is no package called 'tiff'".  
+But when I ran rhub::check_for_cran(env_vars=c(R_COMPILE_AND_INSTALL_PACKAGES = "always")), no error was reported.
 
 ## Downstream dependencies
 There are currently no downstream dependencies for this package.

@@ -167,7 +167,7 @@ get_image_name_from_file = function( file ){
 #' im = sketch(face)
 #'
 #' # im.png is saved to the current working directory
-#' im_save( im, path = getwd() )
+#' im_save( im, name = "im", path = getwd() )
 #'
 #' # myimage.jpg is saved to a specified directory
 #' im_save( im, name = "myimage", path = "path/to/image", format = "jpg" )
