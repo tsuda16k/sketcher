@@ -1061,20 +1061,17 @@ sketch_XDOG = function( im, smooth = 1, sigma = 0.5, k = 1.6, p = 20, eta = 0.5,
 #' @param smooth_levels numeric (integer). a vector of smooth values
 #' @param gain a numeric between 0 and 1. Can be used to reduce noise in dim regions.
 #' @param contrast numeric (integer). Adjusts the image contrast.
-#' @param black a numeric between 0 and 1
+#' @param shadow a numeric between 0 and 1
 #' @param verbose If TRUE (default), progress information is displayed in the Console.
 #' @return an array of the sketched image.
 #' @export
 #' @examples
 #' \donttest{
-#' im = survey(face, style = 1, weight_levels = c(1, 3), smooth_levels = c(1, 3))
-#' plot(im)
-#'
-#' im = survey(face, style = 1, weight_levels = c(1, 3), smooth_levels = c(1, 3), black = TRUE)
+#' im = survey(face, style = 1, weight_levels = c(1, 3), smooth_levels = c(1, 3), shadow = 0.3)
 #' plot(im)
 #' }
 survey = function( im, style = 1, weight_levels = c(1, 2, 4), smooth_levels = c(1, 2, 4),
-                   gain = .02, contrast = NULL, black = FALSE, verbose = TRUE ){
+                   gain = .02, contrast = NULL, shadow = 0, verbose = TRUE ){
   if( is.null( contrast ) ){
     contrast = ifelse( style == 1, 20, 4 )
   }
@@ -1090,7 +1087,7 @@ survey = function( im, style = 1, weight_levels = c(1, 2, 4), smooth_levels = c(
       if( verbose ){
         cat( paste0( n, " ") )
       }
-      im2 = sketch( im, style, weight_levels[ t ], smooth_levels[ s ], gain, contrast, black )
+      im2 = sketch( im, style, weight_levels[ t ], smooth_levels[ s ], gain, contrast, shadow )
       if( is.null( imgs ) ){
         imgs = im2
       } else {

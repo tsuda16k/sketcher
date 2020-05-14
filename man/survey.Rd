@@ -11,7 +11,7 @@ survey(
   smooth_levels = c(1, 2, 4),
   gain = 0.02,
   contrast = NULL,
-  black = FALSE,
+  shadow = 0,
   verbose = TRUE
 )
 }
@@ -28,7 +28,7 @@ survey(
 
 \item{contrast}{numeric (integer). Adjusts the image contrast.}
 
-\item{black}{a numeric between 0 and 1}
+\item{shadow}{a numeric between 0 and 1}
 
 \item{verbose}{If TRUE (default), progress information is displayed in the Console.}
 }
@@ -41,10 +41,7 @@ With this function, you can easily compare the effects of different style parame
 }
 \examples{
 \donttest{
-im = survey(face, style = 1, weight_levels = c(1, 3), smooth_levels = c(1, 3))
-plot(im)
-
-im = survey(face, style = 1, weight_levels = c(1, 3), smooth_levels = c(1, 3), black = TRUE)
+im = survey(face, style = 1, weight_levels = c(1, 3), smooth_levels = c(1, 3), shadow = 0.3)
 plot(im)
 }
 }
