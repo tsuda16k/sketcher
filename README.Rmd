@@ -209,7 +209,7 @@ For some images, good results may be obtained with the default parameters of the
 
 Outline is missing and texture is lacking in the default sketch. By using style 2 and adding shadow, ```sketch(im, style = 2, shadow = 0.4)```, the problems are largely solved. In addition, by setting the ```smooth``` parameter to 0, ```sketch(im, style = 2, lineweight = 1, smooth = 0, shadow = 0.4)```, the sketch was successful in representing the fine texture of bird body.
 
-<p><a href="https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/bird_1800.jpg"><img src="notes/bird_900.jpg" width="100%"></a></p>
+<p><a href="https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/bird_1800.jpg"><img src="notes/bird_1400.jpg" width="100%"></a></p>
 
 ### Case 2
 

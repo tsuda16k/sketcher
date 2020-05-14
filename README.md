@@ -282,7 +282,7 @@ body.
 
 <p>
 
-<a href="https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/bird_1800.jpg"><img src="notes/bird_900.jpg" width="100%"></a>
+<a href="https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/bird_1800.jpg"><img src="notes/bird_1400.jpg" width="100%"></a>
 
 </p>
 
