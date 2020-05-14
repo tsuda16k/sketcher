@@ -323,24 +323,24 @@ Here are some sketches produced by the sketcher package.
 
 <p>
 
-<img src="notes/gallery_cake_900.jpg" width="100%">
+<img src="notes/gallery_cake.jpg" width="100%">
 
 </p>
 
 <p>
 
-<img src="notes/gallery_container_900.jpg" width="100%">
+<img src="notes/gallery_container.jpg" width="100%">
 
 </p>
 
 <p>
 
-<img src="notes/gallery_soba_900.jpg" width="100%">
+<img src="notes/gallery_soba.jpg" width="100%">
 
 </p>
 
 <p>
 
-<img src="notes/gallery_tokyo_st_900.jpg" width="100%">
+<img src="notes/gallery_tokyo_st.jpg" width="100%">
 
 </p>
