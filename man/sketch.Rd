@@ -44,6 +44,6 @@ plot(im)
 
 \dontrun{
 im = im_load("path/to/your/image.jpg")
-pplot(im)
+plot(im)
 }
 }

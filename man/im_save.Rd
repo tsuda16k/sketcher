@@ -24,6 +24,7 @@ No return value, called for side effects.
 Save an image to disk
 }
 \examples{
+\dontrun{
 im = sketch(face)
 
 # im.png is saved to the current working directory
@@ -31,4 +32,5 @@ im_save( im, path = getwd() )
 
 # myimage.jpg is saved to a specified directory
 im_save( im, name = "myimage", path = "path/to/image", format = "jpg" )
+}
 }

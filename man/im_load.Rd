@@ -21,7 +21,7 @@ Load image from file or URL
 \dontrun{
 # load an image from disk
 im = im_load("path/to/your/image.jpg")
-pplot(im)
+plot(im)
 # load an image from URL
 im = im_load("http://placehold.jp/150x150.png")
 }

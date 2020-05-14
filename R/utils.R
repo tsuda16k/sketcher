@@ -92,7 +92,7 @@ plot.nimg = function( x, rescale = FALSE, ... ){
 #' \dontrun{
 #' # load an image from disk
 #' im = im_load("path/to/your/image.jpg")
-#' pplot(im)
+#' plot(im)
 #' # load an image from URL
 #' im = im_load("http://placehold.jp/150x150.png")
 #' }
@@ -163,6 +163,7 @@ get_image_name_from_file = function( file ){
 #' @param quality (jpg only) default is 0.95. Higher quality means less compression.
 #' @return No return value, called for side effects.
 #' @examples
+#' \dontrun{
 #' im = sketch(face)
 #'
 #' # im.png is saved to the current working directory
@@ -170,6 +171,7 @@ get_image_name_from_file = function( file ){
 #'
 #' # myimage.jpg is saved to a specified directory
 #' im_save( im, name = "myimage", path = "path/to/image", format = "jpg" )
+#' }
 #' @export
 im_save = function( im, name, path, format = "png", quality = .95 ){
   if( ! format %in% c( "jpg", "png" ) ){
@@ -999,7 +1001,7 @@ gf_reconstruct = function( dec, scales, ind, include.residual = TRUE ){
 #'
 #' \dontrun{
 #' im = im_load("path/to/your/image.jpg")
-#' pplot(im)
+#' plot(im)
 #' }
 #' @export
 sketch = function( im, style = 1, lineweight = 1, smooth = lineweight, gain = .02, contrast = NULL,
@@ -1067,10 +1069,10 @@ sketch_XDOG = function( im, smooth = 1, sigma = 0.5, k = 1.6, p = 20, eta = 0.5,
 #' @examples
 #' \donttest{
 #' im = survey(face, style = 1, weight_levels = c(1, 3), smooth_levels = c(1, 3))
-#' pplot(im)
+#' plot(im)
 #'
 #' im = survey(face, style = 1, weight_levels = c(1, 3), smooth_levels = c(1, 3), black = TRUE)
-#' pplot(im)
+#' plot(im)
 #' }
 survey = function( im, style = 1, weight_levels = c(1, 2, 4), smooth_levels = c(1, 2, 4),
                    gain = .02, contrast = NULL, black = FALSE, verbose = TRUE ){

@@ -42,9 +42,9 @@ With this function, you can easily compare the effects of different style parame
 \examples{
 \donttest{
 im = survey(face, style = 1, weight_levels = c(1, 3), smooth_levels = c(1, 3))
-pplot(im)
+plot(im)
 
 im = survey(face, style = 1, weight_levels = c(1, 3), smooth_levels = c(1, 3), black = TRUE)
-pplot(im)
+plot(im)
 }
 }
