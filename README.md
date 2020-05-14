@@ -41,12 +41,16 @@ Mac OS X users need to install XQuartz (<https://www.xquartz.org/>).
 
 Please use the `devtools` package to install the `sketcher` package.
 
+**NOTE:**  
+\- On Windows,
+<a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools</a>
+needs to be installed when installing a package from GitHub.  
+\- The `sketcher` package is currently under review by CRAN, so
+`install.packages("sketcher")` command does not work.
+
 ``` r
 devtools::install_github("tsuda16k/sketcher")
 ```
-
-(**NOTE:** The `sketcher` package is currently under review by CRAN, so
-install.packages(“sketcher”) command does not work.)
 
 Then, attach the package.
 
