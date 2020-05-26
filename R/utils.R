@@ -869,7 +869,7 @@ gf_decompose = function( im, log_epsilon = 0.0001, filter_epsilon = 0.01 ){
 gf_decompose_scale = function( im, depth = NULL, log_epsilon = 0.0001, filter_epsilon = 0.01 ){
   im = im_gray( im )
   if( is.null( depth ) ){
-    depth = floor( log2( min( im_size( L ) ) ) )
+    depth = floor( log2( min( im_size( im ) ) ) )
   }
   L = log( im + log_epsilon )
 
