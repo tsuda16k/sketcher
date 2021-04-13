@@ -17,6 +17,11 @@ knitr::opts_chunk$set(
 # sketcher
 
 <!-- badges: start -->
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/sketcher)](https://cran.r-project.org/package=sketcher)
+[![CRAN_time_from_release](https://www.r-pkg.org/badges/ago/sketcher)](https://cran.r-project.org/package=sketcher)
+[![CRAN_latest_release_date](https://www.r-pkg.org/badges/last-release/sketcher)](https://cran.r-project.org/package=sketcher)
+[![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/sketcher)](https://cran.r-project.org/package=sketcher)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
 <!-- badges: end -->
 
 By using the ```sketcher``` package, you can convert a photo into a line drawing image.  

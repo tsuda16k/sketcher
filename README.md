@@ -5,6 +5,12 @@
 
 <!-- badges: start -->
 
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/sketcher)](https://cran.r-project.org/package=sketcher)
+[![CRAN\_time\_from\_release](https://www.r-pkg.org/badges/ago/sketcher)](https://cran.r-project.org/package=sketcher)
+[![CRAN\_latest\_release\_date](https://www.r-pkg.org/badges/last-release/sketcher)](https://cran.r-project.org/package=sketcher)
+[![metacran
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/sketcher)](https://cran.r-project.org/package=sketcher)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
 <!-- badges: end -->
 
 By using the `sketcher` package, you can convert a photo into a line
@@ -14,15 +20,10 @@ be controlled.
 Some examples (source photos and generated sketches) are shown below.
 
 <p>
-
 <img src="notes/face_demo_2000.jpg" width="100%">
-
 </p>
-
 <p>
-
 <img src="notes/others2_2000.jpg" width="100%">
-
 </p>
 
 ## Paper
@@ -57,10 +58,10 @@ To install the development version of the `sketcher` package via GitHub,
 you can use the `devtools` package.
 
 **NOTE:**  
-\- On Windows,
+- On Windows,
 <a href="https://cran.r-project.org/bin/windows/Rtools/">Rtools</a>
 needs to be installed to install a package from GitHub.  
-\- On Mac, XCode may be needed to be installed to install a package from
+- On Mac, XCode may be needed to be installed to install a package from
 GitHub.
 
 ``` r
@@ -107,8 +108,7 @@ plot(im)
 
 The jpg, png, and bmp formats are supported.
 
-You can load an image from the web (URL). For
-example,
+You can load an image from the web (URL). For example,
 
 ``` r
 im = im_load("https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/sketcher_face.jpg")
@@ -134,9 +134,7 @@ plot(im2)
 ```
 
 <p>
-
 <img src="notes/sketch.png" width="50%">
-
 </p>
 
 That’s all.
@@ -146,37 +144,35 @@ sketch.
 
 ## Arguments of the sketch() function
 
-A table of arguments of the `sketch()`
-function:
+A table of arguments of the `sketch()` function:
 
 | Argument   | Meaning                  | Value                  | Default                           |
-| :--------- | :----------------------- | :--------------------- | :-------------------------------- |
+|:-----------|:-------------------------|:-----------------------|:----------------------------------|
 | im         | An input image           | image                  |                                   |
 | style      | Sketch style             | 1 or 2                 | 1                                 |
-| lineweight | Strength of lines        | a numeric, \>= 0.3     | 1                                 |
-| smooth     | Smoothness of texture    | an integer, \>= 0      | 1                                 |
+| lineweight | Strength of lines        | a numeric, &gt;= 0.3   | 1                                 |
+| smooth     | Smoothness of texture    | an integer, &gt;= 0    | 1                                 |
 | gain       | Gain parameter           | a numeric betw 0 and 1 | 0.02                              |
-| contrast   | Contrast parameter       | a numeric, \>= 0       | 20 (for style1) or 4 (for style2) |
+| contrast   | Contrast parameter       | a numeric, &gt;= 0     | 20 (for style1) or 4 (for style2) |
 | shadow     | Shadow threshold         | a numeric betw 0 and 1 | 0.0                               |
-| max.size   | Max resolution of output | an integer, \> 0       | 2048                              |
+| max.size   | Max resolution of output | an integer, &gt; 0     | 2048                              |
 
-The default is `sketch(im, style = 1, lineweight = 1, smooth =
-ceiling(lineweight), gain = .02, contrast = NULL, shadow = 0, max.size
-= 2048)`.
+The default is
+`sketch(im, style = 1, lineweight = 1, smooth = ceiling(lineweight), gain = .02, contrast = NULL, shadow = 0, max.size = 2048)`.
 
-  - im: an image, obtained by using the `im_load()` function.
-  - style: while style 1 focuses on edges, style 2 also retains shading.
-  - lineweight: as the name suggests. set a numeric value equal to or
+-   im: an image, obtained by using the `im_load()` function.
+-   style: while style 1 focuses on edges, style 2 also retains shading.
+-   lineweight: as the name suggests. set a numeric value equal to or
     larger than 0.3.
-  - smooth: noise/blob smoother. set an integer value equal to or larger
+-   smooth: noise/blob smoother. set an integer value equal to or larger
     than 0.
-  - gain: this parameter may be useful for noise reduction in dim
+-   gain: this parameter may be useful for noise reduction in dim
     region.
-  - contrast: contrast of the sketch image is adjusted by this
+-   contrast: contrast of the sketch image is adjusted by this
     parameter.
-  - shadow: if given a value larger than 0 (e.g., 0.3), shadows are
+-   shadow: if given a value larger than 0 (e.g., 0.3), shadows are
     added to sketch.
-  - max.size: the size (image resolution) of output sketch is
+-   max.size: the size (image resolution) of output sketch is
     constrained by this parameter. if the input image has a very high
     resolution, such as 20000 x 10000 pixels, sketch processing will
     take a long time. In such cases, the algorithm first downscales the
@@ -207,7 +203,7 @@ When using `format = "jpg"`, you can set the quality of jpg compression
 
 ## The effects of sketch parameters
 
-### \- style and lineweight
+### - style and lineweight
 
 The most important parameters of the `sketch()` function are `style` and
 `lineweight`.
@@ -217,12 +213,10 @@ as shown in the figure. Note that the shading gets more salient when
 `lineweight` is given a larger value.
 
 <p>
-
 <img src="notes/style_line_1200.jpg" width="80%">
-
 </p>
 
-### \- smooth
+### - smooth
 
 The `smooth` parameter controls the degree of smoothness of image
 texture. By increasing the `smooth` value, fine-scale edges, noises, and
@@ -231,16 +225,13 @@ blobs are eliminated (see the figure below).
 In most cases, aesthetically pleasing results will be obtained when
 `smooth` value is equal to or larger than `lineweight`. If `smooth` is
 not given in the `sketch()` function, `smooth` is assigned with the same
-value as `lineweight` (actually, `smooth =
-ceiling(lineweight)`).
+value as `lineweight` (actually, `smooth = ceiling(lineweight)`).
 
 <p>
-
 <a href="https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/line_smooth_2100.jpg"><img src="notes/line_smooth_1500.jpg" width="100%"></a>
-
 </p>
 
-### \- gain
+### - gain
 
 A constant value (gain) is added to an input image before the extraction
 of edges to produce a sketch. A sketch can be very noisy when an input
@@ -248,18 +239,16 @@ image has dark/dim regions. In such cases, increasing the gain, such as
 `gain = 0.2` or `gain = 0.3`, may reduce the noise. In most cases,
 however, you don’t have to care about this parameter.
 
-### \- contrast
+### - contrast
 
 By increasing the `contrast` parameter, a sketch is darkened. When a
 sketch appears whitish, you may need to increase the `contrast` value.
 
 <p>
-
 <img src="notes/contrast_900.jpg" width="100%">
-
 </p>
 
-### \- shadow
+### - shadow
 
 Shadow can be added to a sketch by using the `shadow` parameter.  
 By default, the sketch function does not include shadow (shadow = 0). In
@@ -267,9 +256,7 @@ many cases, however, adding shadow will be needed to produce a
 reasonable result (described later).
 
 <p>
-
 <img src="notes/shadow_900.jpg" width="100%">
-
 </p>
 
 ## Tips for successful sketching
@@ -284,15 +271,12 @@ where the default sketch fails, and how to fix it.
 Outline is missing and texture is lacking in the default sketch. By
 using style 2 and adding shadow, `sketch(im, style = 2, shadow = 0.4)`,
 the problems are largely solved. In addition, by setting the `smooth`
-parameter to 0, `sketch(im, style = 2, lineweight = 1, smooth = 0,
-shadow = 0.4)`, the sketch was successful in representing the fine
-texture of bird
-body.
+parameter to 0,
+`sketch(im, style = 2, lineweight = 1, smooth = 0, shadow = 0.4)`, the
+sketch was successful in representing the fine texture of bird body.
 
 <p>
-
 <a href="https://raw.githubusercontent.com/tsuda16k/sketcher/master/notes/bird_1800.jpg"><img src="notes/bird_1400.jpg" width="100%"></a>
-
 </p>
 
 ### Case 2
@@ -304,9 +288,7 @@ value of the shadow parameter usually requires trial and error, but
 usually a value between 0.3 and 0.6 will produce a reasonable result.
 
 <p>
-
 <img src="notes/face3_900.jpg" width="80%">
-
 </p>
 
 ### Case 3
@@ -326,9 +308,7 @@ not represented well. Unfortunately, there is no simple solution to the
 difficulty with blurred/defocused images.
 
 <p>
-
 <img src="notes/cat_900.jpg" width="100%">
-
 </p>
 
 ## Gallery
@@ -336,25 +316,14 @@ difficulty with blurred/defocused images.
 Here are some sketches produced by the sketcher package.
 
 <p>
-
 <img src="notes/gallery_cake.jpg" width="100%">
-
 </p>
-
 <p>
-
 <img src="notes/gallery_container.jpg" width="100%">
-
 </p>
-
 <p>
-
 <img src="notes/gallery_soba.jpg" width="100%">
-
 </p>
-
 <p>
-
 <img src="notes/gallery_tokyo_st.jpg" width="100%">
-
 </p>
